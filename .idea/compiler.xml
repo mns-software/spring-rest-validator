@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="light-rest-4j.openapi-meta.main" target="1.8" />
+      <module name="light-rest-4j.openapi-meta.test" target="1.8" />
+      <module name="light-rest-4j.openapi-validator.main" target="1.8" />
+      <module name="light-rest-4j.openapi-validator.test" target="1.8" />
+      <module name="light-rest-4j.swagger-meta.main" target="1.8" />
+      <module name="light-rest-4j.swagger-meta.test" target="1.8" />
+      <module name="light-rest-4j.swagger-validator.main" target="1.8" />
+      <module name="light-rest-4j.swagger-validator.test" target="1.8" />
+      <module name="spring-.openapi-meta.main" target="1.8" />
+      <module name="spring-.openapi-meta.test" target="1.8" />
+      <module name="spring-.openapi-validator.main" target="1.8" />
+      <module name="spring-.openapi-validator.test" target="1.8" />
+      <module name="spring-.swagger-meta.main" target="1.8" />
+      <module name="spring-.swagger-meta.test" target="1.8" />
+      <module name="spring-.swagger-validator.main" target="1.8" />
+      <module name="spring-.swagger-validator.test" target="1.8" />
+      <module name="spring-swagger-validator.main" target="1.8" />
+      <module name="spring-swagger-validator.openapi-meta.main" target="1.8" />
+      <module name="spring-swagger-validator.openapi-meta.test" target="1.8" />
+      <module name="spring-swagger-validator.openapi-validator.main" target="1.8" />
+      <module name="spring-swagger-validator.openapi-validator.test" target="1.8" />
+      <module name="spring-swagger-validator.swagger-meta.main" target="1.8" />
+      <module name="spring-swagger-validator.swagger-meta.test" target="1.8" />
+      <module name="spring-swagger-validator.swagger-validator.main" target="1.8" />
+      <module name="spring-swagger-validator.swagger-validator.test" target="1.8" />
+      <module name="spring-swagger-validator.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
