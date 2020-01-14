@@ -3,7 +3,6 @@
  */
 
 rootProject.name = 'spring-rest-validator'
-include(':swagger-meta')
 include(':swagger-validator')
 include(':openapi-meta')
 include(':openapi-validator')
