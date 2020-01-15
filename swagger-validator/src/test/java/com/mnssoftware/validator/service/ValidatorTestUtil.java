@@ -1,27 +1,9 @@
-/*
- * Copyright (c) 2019 MNS Software Limited
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-package com.mnssoftware.validator;
+package com.mnssoftware.validator.service;
 
 import io.swagger.models.parameters.SerializableParameter;
 import io.swagger.models.properties.IntegerProperty;
 import io.swagger.models.properties.Property;
 import io.swagger.models.properties.StringProperty;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
 
@@ -30,8 +12,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class ValidatorTestUtil {
-
-    private static final Logger log = LoggerFactory.getLogger(ValidatorTestUtil.class);
 
     // Int parameters
     public static SerializableParameter intParam() {
@@ -64,12 +44,40 @@ public class ValidatorTestUtil {
     }
 
     public static SerializableParameter stringParam(final boolean required) {
+        return stringParam(required, "query");
+    }
+
+    public static SerializableParameter stringParam(final boolean required, final String in) {
         final SerializableParameter result = mock(SerializableParameter.class);
         when(result.getName()).thenReturn("Test Parameter");
         when(result.getType()).thenReturn("string");
+        when(result.getIn()).thenReturn(in);
         when(result.getRequired()).thenReturn(required);
-        when(result.getMinimum()).thenReturn(null);
-        when(result.getMaximum()).thenReturn(null);
+        return result;
+    }
+
+    // Double parameters
+
+    public static SerializableParameter doubleParam() {
+        return doubleParam(true, null, null);
+    }
+
+    public static SerializableParameter doubleParam(boolean required) {
+        return doubleParam(required, null, null);
+    }
+
+    public static SerializableParameter doubleParam(final BigDecimal min, final BigDecimal max) {
+        return doubleParam(true, min, max);
+    }
+
+    public static SerializableParameter doubleParam(final boolean required, final BigDecimal min, final BigDecimal max) {
+        final SerializableParameter result = mock(SerializableParameter.class);
+        when(result.getName()).thenReturn("Test Parameter");
+        when(result.getType()).thenReturn("number");
+        when(result.getFormat()).thenReturn("double");
+        when(result.getRequired()).thenReturn(required);
+        when(result.getMinimum()).thenReturn(min);
+        when(result.getMaximum()).thenReturn(max);
         return result;
     }
 
@@ -100,14 +108,12 @@ public class ValidatorTestUtil {
 
     // Array parameters
 
-    public static SerializableParameter intArrayParam(final boolean required,
-                                                      final String collectionFormat) {
+    public static SerializableParameter intArrayParam(final boolean required, final String collectionFormat) {
         final IntegerProperty property = new IntegerProperty();
         return arrayParam(required, collectionFormat, null, null, null, property);
     }
 
-    public static SerializableParameter stringArrayParam(final boolean required,
-                                                         final String collectionFormat) {
+    public static SerializableParameter stringArrayParam(final boolean required, final String collectionFormat) {
         final StringProperty property = new StringProperty();
         return arrayParam(required, collectionFormat, null, null, null, property);
     }
