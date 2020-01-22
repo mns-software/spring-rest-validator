@@ -28,6 +28,8 @@
       <module name="spring-.swagger-meta.test" target="1.8" />
       <module name="spring-.swagger-validator.main" target="1.8" />
       <module name="spring-.swagger-validator.test" target="1.8" />
+      <module name="spring-rest-validator.openapi-meta.main" target="1.8" />
+      <module name="spring-rest-validator.openapi-meta.test" target="1.8" />
       <module name="spring-rest-validator.swagger-meta.main" target="1.8" />
       <module name="spring-rest-validator.swagger-meta.test" target="1.8" />
       <module name="spring-swagger-validator.main" target="1.8" />
