@@ -1,5 +1,8 @@
 package com.mnssoftware.validator.swagger.service;
 
+import com.mnssoftware.validator.core.service.ValidationException;
+import com.mnssoftware.validator.core.service.ValidationKeyMessage;
+import com.mnssoftware.validator.core.service.ValidationService;
 import com.mnssoftware.validator.swagger.service.swagger.ApiNormalisedPath;
 import com.mnssoftware.validator.swagger.service.swagger.NormalisedPath;
 import com.mnssoftware.validator.swagger.service.swagger.SwaggerHelper;

@@ -17,8 +17,8 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.Set;
 
-import static com.mnssoftware.validator.swagger.service.ValidationKeyMessage.DEFAULT;
-import static com.mnssoftware.validator.swagger.service.ValidationKeyMessage.NOT_NULL;
+import static com.mnssoftware.validator.core.service.ValidationKeyMessage.DEFAULT;
+import static com.mnssoftware.validator.core.service.ValidationKeyMessage.NOT_NULL;
 import static java.util.Objects.requireNonNull;
 
 /**

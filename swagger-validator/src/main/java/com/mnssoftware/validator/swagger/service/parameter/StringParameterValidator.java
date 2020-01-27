@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-import static com.mnssoftware.validator.swagger.service.ValidationKeyMessage.PATTERN;
+import static com.mnssoftware.validator.core.service.ValidationKeyMessage.PATTERN;
 
 /**
  * String type parameter validator

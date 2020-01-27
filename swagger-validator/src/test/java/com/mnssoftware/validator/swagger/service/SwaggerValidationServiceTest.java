@@ -1,5 +1,6 @@
 package com.mnssoftware.validator.swagger.service;
 
+import com.mnssoftware.validator.core.service.ValidationExceptionMatcher;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;

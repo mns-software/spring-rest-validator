@@ -2,11 +2,12 @@ package com.mnssoftware.validator.swagger.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.MissingNode;
+import com.mnssoftware.validator.core.service.ValidationException;
+import com.mnssoftware.validator.core.utils.JsonUtils;
 import com.mnssoftware.validator.swagger.service.parameter.ParameterValidators;
 import com.mnssoftware.validator.swagger.service.swagger.NormalisedPath;
 import com.mnssoftware.validator.swagger.service.swagger.SwaggerHelper;
 import com.mnssoftware.validator.swagger.service.swagger.SwaggerOperation;
-import com.mnssoftware.validator.swagger.utils.JsonUtils;
 import com.networknt.schema.SchemaValidatorsConfig;
 import com.networknt.schema.ValidationMessage;
 import io.swagger.models.parameters.BodyParameter;
@@ -22,7 +23,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static com.mnssoftware.validator.swagger.service.ValidationKeyMessage.*;
+import static com.mnssoftware.validator.core.service.ValidationKeyMessage.*;
 import static java.util.Collections.singleton;
 import static java.util.Objects.requireNonNull;
 import static java.util.stream.Collectors.toSet;

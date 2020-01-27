@@ -8,7 +8,7 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.10/625fc0055674dff70dbc76efa36d0f2c89b04a24/lombok-1.18.10.jar" />
         </processorPath>
-        <module name="spring-rest-validator.swagger-validator.main" />
+        <module name="spring-rest-validator.validator-core.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -30,6 +30,8 @@
       <module name="spring-.swagger-validator.test" target="1.8" />
       <module name="spring-rest-validator.openapi-meta.main" target="1.8" />
       <module name="spring-rest-validator.openapi-meta.test" target="1.8" />
+      <module name="spring-rest-validator.openapi-validator.main" target="1.8" />
+      <module name="spring-rest-validator.openapi-validator.test" target="1.8" />
       <module name="spring-rest-validator.swagger-meta.main" target="1.8" />
       <module name="spring-rest-validator.swagger-meta.test" target="1.8" />
       <module name="spring-swagger-validator.main" target="1.8" />

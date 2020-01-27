@@ -10,7 +10,7 @@ import org.springframework.util.CollectionUtils;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static com.mnssoftware.validator.swagger.service.ValidationKeyMessage.*;
+import static com.mnssoftware.validator.core.service.ValidationKeyMessage.*;
 import static java.util.Objects.requireNonNull;
 
 /**

@@ -7,7 +7,7 @@ import io.swagger.models.parameters.SerializableParameter;
 import java.util.Collections;
 import java.util.Set;
 
-import static com.mnssoftware.validator.swagger.service.ValidationKeyMessage.*;
+import static com.mnssoftware.validator.core.service.ValidationKeyMessage.*;
 
 /**
  * Number parameter validator

@@ -10,8 +10,8 @@ import java.util.Collections;
 import java.util.Optional;
 import java.util.Set;
 
-import static com.mnssoftware.validator.swagger.service.ValidationKeyMessage.ENUM;
-import static com.mnssoftware.validator.swagger.service.ValidationKeyMessage.NOT_NULL;
+import static com.mnssoftware.validator.core.service.ValidationKeyMessage.ENUM;
+import static com.mnssoftware.validator.core.service.ValidationKeyMessage.NOT_NULL;
 
 /**
  * An abstract implementation of ParameterValidator.
