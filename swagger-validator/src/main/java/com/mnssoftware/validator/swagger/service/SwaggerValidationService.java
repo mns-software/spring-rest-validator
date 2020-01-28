@@ -77,7 +77,7 @@ public class SwaggerValidationService implements ValidationService {
                     Enum::name).collect(toList());
             throw new HttpRequestMethodNotSupportedException(request.getMethod(), supportedMethods);
         }
-        return Optional.of(new SwaggerOperation(swaggerPathString, swaggerPath, httpMethod, operation));
+        return Optional.of(new SwaggerOperation(swaggerPathString, operation));
     }
 
     private String getFieldFromJsonMessage(String message) {

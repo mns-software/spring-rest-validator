@@ -53,7 +53,11 @@ public class ApiNormalisedPath implements NormalisedPath {
 
     @Override
     public String part(int index) {
-        return pathParts.get(index);
+        if (index < pathParts.size() && index > -1) {
+            return pathParts.get(index);
+        } else {
+            return null;
+        }
     }
 
     @Override

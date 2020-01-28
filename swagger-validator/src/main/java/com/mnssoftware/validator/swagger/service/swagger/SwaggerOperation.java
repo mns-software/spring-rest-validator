@@ -1,9 +1,7 @@
 package com.mnssoftware.validator.swagger.service.swagger;
 
 import com.mnssoftware.validator.core.service.NormalisedPath;
-import io.swagger.models.HttpMethod;
 import io.swagger.models.Operation;
-import io.swagger.models.Path;
 import lombok.Data;
 
 /**
@@ -17,7 +15,5 @@ import lombok.Data;
 @Data
 public class SwaggerOperation {
     private final NormalisedPath pathString;
-    private final Path pathObject;
-    private final HttpMethod method;
     private final Operation operation;
 }
