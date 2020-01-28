@@ -2,10 +2,10 @@ package com.mnssoftware.validator.swagger.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.MissingNode;
+import com.mnssoftware.validator.core.service.NormalisedPath;
 import com.mnssoftware.validator.core.service.ValidationException;
 import com.mnssoftware.validator.core.utils.JsonUtils;
 import com.mnssoftware.validator.swagger.service.parameter.ParameterValidators;
-import com.mnssoftware.validator.swagger.service.swagger.NormalisedPath;
 import com.mnssoftware.validator.swagger.service.swagger.SwaggerHelper;
 import com.mnssoftware.validator.swagger.service.swagger.SwaggerOperation;
 import com.networknt.schema.SchemaValidatorsConfig;

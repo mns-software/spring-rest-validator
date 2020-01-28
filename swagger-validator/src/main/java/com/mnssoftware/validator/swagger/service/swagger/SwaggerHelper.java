@@ -1,5 +1,7 @@
 package com.mnssoftware.validator.swagger.service.swagger;
 
+import com.mnssoftware.validator.core.service.ApiNormalisedPath;
+import com.mnssoftware.validator.core.service.NormalisedPath;
 import com.networknt.schema.ValidationMessage;
 import io.swagger.models.Swagger;
 
@@ -23,7 +25,7 @@ public class SwaggerHelper {
         if (swagger != null) {
             return swagger.getPaths().keySet()
                     .stream()
-                    .map(p -> (NormalisedPath) new ApiNormalisedPath(swagger, p))
+                    .map(p -> (NormalisedPath) new ApiNormalisedPath(swagger.getBasePath(), p))
                     .filter(p -> pathMatches(requestPath, p))
                     .findFirst();
         } else {

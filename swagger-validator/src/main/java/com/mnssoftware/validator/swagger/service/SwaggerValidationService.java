@@ -1,10 +1,6 @@
 package com.mnssoftware.validator.swagger.service;
 
-import com.mnssoftware.validator.core.service.ValidationException;
-import com.mnssoftware.validator.core.service.ValidationKeyMessage;
-import com.mnssoftware.validator.core.service.ValidationService;
-import com.mnssoftware.validator.swagger.service.swagger.ApiNormalisedPath;
-import com.mnssoftware.validator.swagger.service.swagger.NormalisedPath;
+import com.mnssoftware.validator.core.service.*;
 import com.mnssoftware.validator.swagger.service.swagger.SwaggerHelper;
 import com.mnssoftware.validator.swagger.service.swagger.SwaggerOperation;
 import com.networknt.schema.ValidationMessage;
@@ -24,6 +20,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+import static java.util.Objects.requireNonNull;
 import static java.util.stream.Collectors.toList;
 
 @Slf4j
@@ -31,17 +28,18 @@ public class SwaggerValidationService implements ValidationService {
 
     private final Swagger swagger;
 
-    RequestValidator requestValidator;
+    private final RequestValidator requestValidator;
 
     public SwaggerValidationService(String swaggerDocLocation) {
         swagger = new SwaggerParser().read(swaggerDocLocation);
+        requireNonNull(swagger, "Unable to read swagger document from given location: " + swaggerDocLocation);
         final SchemaValidator schemaValidator = new SchemaValidator(swagger);
-        this.requestValidator = new RequestValidator(schemaValidator);
+        requestValidator = new RequestValidator(schemaValidator);
     }
 
     @Override
     public void validateRequest(HttpServletRequest request) throws ServletException {
-        final NormalisedPath requestPath = new ApiNormalisedPath(swagger, request.getRequestURI());
+        final NormalisedPath requestPath = new ApiNormalisedPath(swagger.getBasePath(), request.getRequestURI());
         Optional<SwaggerOperation> swaggerOperation = getSwaggerOperation(request);
 
         swaggerOperation.ifPresent(op -> {
@@ -60,7 +58,7 @@ public class SwaggerValidationService implements ValidationService {
     }
 
     private Optional<SwaggerOperation> getSwaggerOperation(HttpServletRequest request) throws ServletException {
-        final NormalisedPath requestPath = new ApiNormalisedPath(swagger, request.getRequestURI());
+        final NormalisedPath requestPath = new ApiNormalisedPath(swagger.getBasePath(), request.getRequestURI());
         final Optional<NormalisedPath> maybeApiPath = SwaggerHelper.findMatchingApiPath(swagger, requestPath);
         if (!maybeApiPath.isPresent()) {
             log.debug("Path '{}' is not defined in swagger documentation", requestPath.original());

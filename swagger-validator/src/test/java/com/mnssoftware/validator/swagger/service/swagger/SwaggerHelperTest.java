@@ -1,5 +1,6 @@
 package com.mnssoftware.validator.swagger.service.swagger;
 
+import com.mnssoftware.validator.core.service.NormalisedPath;
 import com.networknt.schema.ValidationMessage;
 import io.swagger.models.Path;
 import io.swagger.models.Swagger;

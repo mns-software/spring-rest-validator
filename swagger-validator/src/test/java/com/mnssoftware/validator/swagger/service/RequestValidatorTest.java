@@ -1,8 +1,8 @@
 package com.mnssoftware.validator.swagger.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.mnssoftware.validator.core.service.NormalisedPath;
 import com.mnssoftware.validator.core.service.ValidationExceptionMatcher;
-import com.mnssoftware.validator.swagger.service.swagger.NormalisedPath;
 import com.mnssoftware.validator.swagger.service.swagger.SwaggerHelper;
 import com.mnssoftware.validator.swagger.service.swagger.SwaggerOperation;
 import com.networknt.schema.ValidationMessage;
