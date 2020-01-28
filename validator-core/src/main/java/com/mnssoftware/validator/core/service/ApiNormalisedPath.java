@@ -39,10 +39,10 @@ public class ApiNormalisedPath implements NormalisedPath {
     private final String normalised;
 
     public ApiNormalisedPath(final String basePath, final String path) {
-        if (logger.isDebugEnabled()) logger.debug("path =" + path);
+        if (logger.isDebugEnabled()) logger.debug("path = {}", path);
         this.original = requireNonNull(path, "A path is required");
         this.normalised = normalise(basePath, path);
-        if (logger.isDebugEnabled()) logger.debug("normalised = " + this.normalised);
+        if (logger.isDebugEnabled()) logger.debug("normalised = {}", normalised);
         this.pathParts = unmodifiableList(asList(normalised.split("/")));
     }
 
